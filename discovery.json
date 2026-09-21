@@ -1,0 +1,97 @@
+{
+  "question": "How do I create or edit visual canvas files for Obsidian?",
+  "trigger": [
+    "User asks to create a .canvas file",
+    "User wants to build a mind map, flowchart, or board in Obsidian",
+    "User mentions JSON Canvas or infinite canvas format",
+    "User provides a .canvas file to edit or extend"
+  ],
+  "decision": [
+    "Generate a valid JSON Canvas file with correct node types and connections",
+    "Edit an existing .canvas file to add, remove, or restructure nodes"
+  ],
+  "evidence": [
+    "Canvas purpose description from the user",
+    "JSON Canvas Spec 1.0 schema",
+    "Obsidian .canvas file format requirements"
+  ],
+  "success_measure": "A valid .canvas file that opens correctly in Obsidian with all nodes, edges, and groups rendered as specified",
+  "outcome": "A valid .canvas file containing properly structured JSON Canvas data",
+  "intended_users": [
+    "Obsidian users building visual canvases",
+    "Knowledge workers organizing information spatially",
+    "Anyone needing infinite canvas files in JSON Canvas format"
+  ],
+  "input_types": [
+    "Text description of desired canvas",
+    "Existing .canvas file to modify",
+    "Concept list or process to visualize"
+  ],
+  "output_artifacts": [
+    ".canvas file with valid JSON Canvas data"
+  ],
+  "use_cases": [
+    "Create mind maps from concept lists",
+    "Build flowcharts from process descriptions",
+    "Design project boards with grouped tasks",
+    "Organize research with file and link references"
+  ],
+  "examples": [
+    {
+      "invocation": "/json-canvas-skill Create a flowchart for our deployment process",
+      "description": "Generate a flowchart canvas from a process description"
+    },
+    {
+      "invocation": "/json-canvas-skill Make a research canvas linking my papers and notes",
+      "description": "Generate a research organization canvas with file nodes"
+    }
+  ],
+  "permissions_systems": [
+    "Write .canvas files to the current working directory"
+  ],
+  "typical_completion_time": "1-2 minutes",
+  "compatibility": {
+    "declared": ["opencode", "claude-code", "cursor", "codex", "gemini", "goose", "cline", "roo-code", "kilo-code"],
+    "certified": []
+  },
+  "environment": {
+    "documentation_sources": ["JSON Canvas Spec 1.0 at jsoncanvas.org/spec/1.0/"],
+    "data_sources": ["User-provided canvas description or existing .canvas file"],
+    "required_capabilities": ["Write JSON files", "Generate valid 16-char hex IDs"],
+    "readiness_checks": ["Output directory is writable"]
+  },
+  "risk": {
+    "tier": "low",
+    "permissions": ["Write .canvas files to current directory"],
+    "mutation_boundary": "read-only",
+    "approval_required": []
+  },
+  "software_mutation": {
+    "applies": false
+  },
+  "data_interfaces": {
+    "applies": false
+  },
+  "semantic_recon": {
+    "applies": false
+  },
+  "semantic_contract": {
+    "applies": false
+  },
+  "routing_tests": {
+    "should_trigger": [
+      "Create a canvas file for my project",
+      "Make a flowchart in Obsidian canvas format",
+      "Edit this .canvas file to add a new node",
+      "帮我创建一个canvas文件",
+      "做一个思维导图canvas"
+    ],
+    "should_not_trigger": [
+      "Write a Python script",
+      "Analyze this CSV data",
+      "Deploy to production",
+      "Create an Excalidraw diagram"
+    ]
+  },
+  "support_tier": "supported"
+}
